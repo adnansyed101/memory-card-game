@@ -1,5 +1,3 @@
-import ahsokaTano from "./images/ahsoka-tano.jpg";
-
 export default [
   { id: "Ahsoka Tano", img: "./src/images/ahsoka-tano.jpg" },
   {
