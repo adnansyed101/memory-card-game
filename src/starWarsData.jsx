@@ -26,7 +26,7 @@ export default [
   },
   {
     id: "Luke Skywalker",
-    img: "./src/images/luke-skywalker.jpg",
+    img: "./src/images/luke-skywalker.jpeg",
   },
   {
     id: "Mace Windu",
