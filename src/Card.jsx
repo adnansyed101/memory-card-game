@@ -1,8 +1,8 @@
 function Card({ char }) {
   return (
-    <div className="bg-white w-60 rounded shadow overflow-hidden">
-      <img src={char.img} alt="character" className=" object-cover h-96 " />
-      <p className="text-center text-2xl my-5">{char.id}</p>
+    <div className="overflow-hidden rounded bg-white shadow">
+      <img src={char.img} alt="character" className="h-4/5 w-60 object-cover" />
+      <p className="my-5 text-center text-xl">{char.id}</p>
     </div>
   );
 }
