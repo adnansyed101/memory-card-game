@@ -5,7 +5,7 @@ import Card from "./Card";
 function App() {
   const [chars, setChars] = useState(starWarsData);
 
-  const cardElements = chars.map((char) => <Card char={char} />);
+  const cardElements = chars.map((char) => <Card char={char} key={char.id} />);
 
   return (
     <div className="container mx-auto">
