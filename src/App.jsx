@@ -4,6 +4,13 @@ import Card from "./Card";
 
 function App() {
   const [chars, setChars] = useState(starWarsData);
+  const [charNames, setCharNames] = useState([]);
+
+  const getNames = (e) => {
+    setCharNames((prev) => prev.concat(e.id));
+  };
+
+  console.log(charNames);
 
   const randomize = () => {
     const shallowCopy = [...chars];
@@ -19,7 +26,12 @@ function App() {
   };
 
   const cardElements = chars.map((char) => (
-    <Card onClick={randomize} char={char} key={char.id} />
+    <Card
+      onClick={randomize}
+      getNames={getNames}
+      char={char}
+      key={char.id}
+    />
   ));
 
   return (

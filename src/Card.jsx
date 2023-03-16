@@ -1,7 +1,10 @@
-function Card({ char, onClick }) {
+function Card({ char, onClick, getNames }) {
   return (
     <div
-      onClick={onClick}
+      onClick={() => {
+        onClick();
+        getNames(char);
+      }}
       className="overflow-hidden rounded bg-white shadow duration-200 ease-out hover:scale-105"
     >
       <img src={char.img} alt="character" className="h-4/5 w-60 object-cover" />
