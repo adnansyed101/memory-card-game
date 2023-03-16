@@ -5,12 +5,27 @@ import Card from "./Card";
 function App() {
   const [chars, setChars] = useState(starWarsData);
 
-  const cardElements = chars.map((char) => <Card char={char} key={char.id} />);
+  const randomize = () => {
+    const shallowCopy = [...chars];
+    const shuffledChars = [];
+
+    while (shallowCopy.length > 0) {
+      let shuffler = Math.floor(Math.random() * shallowCopy.length);
+      shuffledChars.push(shallowCopy[shuffler]);
+      shallowCopy.splice(shuffler, 1);
+    }
+
+    setChars(shuffledChars);
+  };
+
+  const cardElements = chars.map((char) => (
+    <Card onClick={randomize} char={char} key={char.id} />
+  ));
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-center text-4xl my-4">Memory Card Game</h1>
-      <div className="grid grid-cols-6 gap-10 my-10">{cardElements}</div>
+      <h1 className="my-4 text-center text-4xl">Memory Card Game</h1>
+      <div className="my-10 grid grid-cols-6 gap-10">{cardElements}</div>
     </div>
   );
 }
