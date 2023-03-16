@@ -1,8 +1,8 @@
-function Card({ char, onClick, getNames }) {
+function Card({ char, handleClick, getNames }) {
   return (
     <div
       onClick={() => {
-        onClick();
+        handleClick();
         getNames(char);
       }}
       className="overflow-hidden rounded bg-white shadow duration-200 ease-out hover:scale-105"

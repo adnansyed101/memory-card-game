@@ -27,7 +27,7 @@ function App() {
 
   const cardElements = chars.map((char) => (
     <Card
-      onClick={randomize}
+      handleClick={randomize}
       getNames={getNames}
       char={char}
       key={char.id}
