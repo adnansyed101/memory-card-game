@@ -10,9 +10,9 @@ function App() {
     const shuffledChars = [];
 
     while (shallowCopy.length > 0) {
-      let shuffler = Math.floor(Math.random() * shallowCopy.length);
-      shuffledChars.push(shallowCopy[shuffler]);
-      shallowCopy.splice(shuffler, 1);
+      let num = Math.floor(Math.random() * shallowCopy.length);
+      shuffledChars.push(shallowCopy[num]);
+      shallowCopy.splice(num, 1);
     }
 
     setChars(shuffledChars);
