@@ -27,6 +27,12 @@ function App() {
     }
   };
 
+  const reset = () => {
+    setCharNames([]);
+    setScore(0);
+    setHighScore(0);
+  };
+
   const randomize = () => {
     const shallowCopy = [...chars];
     const shuffledChars = [];
@@ -56,6 +62,14 @@ function App() {
       <p className="text-xl">
         Score: {score}. High Score: {highScore}
       </p>
+      {score === 12 && (
+        <button
+          onClick={reset}
+          className="my-2 border-2 border-black py-2 px-4"
+        >
+          Play Again
+        </button>
+      )}
       <div className="my-10 grid grid-cols-6 gap-10">{cardElements}</div>
     </div>
   );
