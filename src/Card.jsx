@@ -1,10 +1,10 @@
-function Card({ char, handleClick, getNames, checkNameExists }) {
+function Card({ char, handleClick, getNames, scoreCounter }) {
   return (
     <div
       onClick={() => {
         handleClick();
         getNames(char);
-        checkNameExists(char.id);
+        scoreCounter(char.id);
       }}
       className="overflow-hidden rounded bg-white shadow duration-200 ease-out hover:scale-105"
     >

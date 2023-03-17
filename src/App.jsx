@@ -11,7 +11,7 @@ function App() {
     setCharNames((prev) => prev.concat(e.id));
   };
 
-  const checkNameExists = (e) => {
+  const scoreCounter = (e) => {
     if (charNames.includes(e)) {
       setScore(0);
       setCharNames([]);
@@ -37,7 +37,7 @@ function App() {
     <Card
       handleClick={randomize}
       getNames={getNames}
-      checkNameExists={checkNameExists}
+      scoreCounter={scoreCounter}
       char={char}
       key={char.id}
     />
