@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import starWarsData from "./starWarsData";
 import Card from "./Card";
 
@@ -6,6 +6,13 @@ function App() {
   const [chars, setChars] = useState(starWarsData);
   const [charNames, setCharNames] = useState([]);
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
+  useEffect(() => {
+    if (score > highScore) {
+      setHighScore(score);
+    }
+  }, [score]);
 
   const getNames = (e) => {
     setCharNames((prev) => prev.concat(e.id));
@@ -46,7 +53,9 @@ function App() {
   return (
     <div className="container mx-auto">
       <h1 className="my-4 text-center text-4xl">Memory Card Game</h1>
-      <p className="text-xl">Score: {score}</p>
+      <p className="text-xl">
+        Score: {score}. High Score: {highScore}
+      </p>
       <div className="my-10 grid grid-cols-6 gap-10">{cardElements}</div>
     </div>
   );
