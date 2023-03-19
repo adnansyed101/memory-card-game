@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="container mx-auto">
       <h1 className="my-4 text-center text-4xl">Memory Card Game</h1>
-      <p className="text-xl">
+      <p className="ml-4 text-xl">
         Score: {score}. High Score: {highScore}
       </p>
       {score === 12 && (
@@ -70,7 +70,9 @@ function App() {
           Play Again
         </button>
       )}
-      <div className="my-10 grid grid-cols-6 gap-10">{cardElements}</div>
+      <div className="my-5 grid grid-cols-2 gap-3 px-3 md:my-10 md:grid-cols-6 lg:gap-10  lg:px-5">
+        {cardElements}
+      </div>
     </div>
   );
 }
